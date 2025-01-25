@@ -4,16 +4,16 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Bun Compatible](https://img.shields.io/badge/Bun-%F0%9F%8D%90-ff69b4)](https://bun.sh)
 
-> The Ultimate Keystore Automator for MOI Developers  
-> One command to setup your keystore and configs! ⚡️
+> The Ultimate Keystore and config Automator for MOI Developers! 
+> One command to setup your keystore! ⚡️
 
 
 ## 🚀 Quick Start
 
 ### Installation
 ```bash
-## Install globally using Bun
-bun install -g moi-keystore-setup
+# Install globally using Bun
+bunx install -g moi-keystore-setup
 
 # Or directly with npm
 npm install -g moi-keystore-setup
@@ -22,13 +22,13 @@ npm install -g moi-keystore-setup
 
 ### Basic Usage
 
-Default setup (creates ~/.moi on Linux/Mac or C:\Users\You\.moi on Windows)
+# Default setup (creates ~/.moi on Linux/Mac or C:\Users\You\.moi on Windows)
 moi-keystore-setup init "your mnemonic phrase"
 
 # Custom path example
 moi-keystore-setup init "your mnemonic" --path ~/projects/my-moi-app
 
-✨ Features
+### ✨ Features
 - 🔄 **Auto-Magic Setup** - Creates complete MOI security environment in one command
 - 🖥️ **Cross-Platform Ready** - Works seamlessly on Windows, Linux, and macOS
 - 🛡️ **Enterprise-Grade Security** - Uses Ethereum's official encryption standards

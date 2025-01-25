@@ -38,7 +38,7 @@ program
             } else {
                 console.error(chalk.red('An unknown error occurred.'));
             }
-            process.exit(1); // Exit with error code
+            process.exit(1);
         }
     });
 

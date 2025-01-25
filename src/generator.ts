@@ -3,8 +3,7 @@ import path from 'path'
 import { Wallet } from 'js-moi-sdk';
 import { isValidMnemonic } from './utility';
 import type { FaucetAccount, GuardianAccount } from './types';
-import {homedir} from 'os'
-
+import { homedir } from 'os'
 
 
 
@@ -22,6 +21,7 @@ export class KeystoreGenerator {
 
         const moiPath = path.resolve(basePath, '.moi');
 
+
         //ensure path exists
         this.ensurePathExists(moiPath);
 
@@ -30,9 +30,7 @@ export class KeystoreGenerator {
         const enckeyPath = path.resolve(moiPath, 'enckey.txt');
 
         //generate enckey
-
         writeFileSync(enckeyPath, password);
-
 
 
         //generate keystore 
@@ -51,9 +49,10 @@ export class KeystoreGenerator {
 
     private static updateGuardianConfig(moiPath: string, keystorePath: string, enckeyPath: string) {
         const configPath = path.join(moiPath, 'guardians_accounts.json');
+        const basePath = homedir();
         const relativePaths = {
-            keystore: path.relative(moiPath, keystorePath),
-            enckey: path.relative(moiPath, enckeyPath)
+            keystore: path.relative(basePath, keystorePath),
+            enckey: path.relative(basePath, enckeyPath)
         }
 
         const config: GuardianAccount[] = existsSync(configPath) ? JSON.parse(readFileSync(configPath, 'utf-8')) : [];
@@ -65,9 +64,10 @@ export class KeystoreGenerator {
 
     private static updateFaucetConfig(moiPath: string, keystorePath: string, enckeyPath: string, address: string) {
         const configPath = path.join(moiPath, 'accounts.json');
+        const basePath = homedir();
         const relativePaths = {
-            keystore: path.relative(moiPath, keystorePath),
-            enckey: path.relative(moiPath, enckeyPath),
+            keystore: path.relative(basePath, keystorePath),
+            enckey: path.relative(basePath, enckeyPath),
             address
         }
 
