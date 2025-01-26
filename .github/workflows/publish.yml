@@ -36,3 +36,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to NPM
+        run: bun publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
