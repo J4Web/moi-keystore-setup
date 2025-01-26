@@ -18,7 +18,7 @@ program
     .command('init')
     .description('Initialize moi keystore')
     .argument('<mnemonic>', 'mnemonic to generate keystore')
-    .option('-p, --path <path>', 'Path to generate keystore and config files (default: user home directory)', resolve(homedir()))
+    .option('-d, --dir <dir>', 'Directory to generate keystore and config files (default: user home directory)', resolve(homedir()))
     .option('-k, --key-path <keyPath>', 'Key path to generate keystore (default: m/44\'/6174\'/0\'/0/1)', `m/44'/6174'/0'/0/1`)
     .option('-P, --password <password>', 'Password to encrypt keystore (default: 123456)', '123456')
     .action(async (mnemonic, options) => {

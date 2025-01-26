@@ -2,12 +2,16 @@
   "name": "moi-keystore-setup",
   "module": "index.ts",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "license": "MIT",
   "bin": {
-    "moi-keystore-setup": "./dist/bin.js"
+    "moi-keystore-setup": "./dist/bin"
   },
   "scripts": {
-    "build": "bun build --minify --outfile=dist/bin.js src/index.ts",
+    "build": "bun build --minify --target=node --outfile=dist/bin src/index.ts",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "prepublish": "npm run build",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "changeset version",
