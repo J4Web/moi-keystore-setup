@@ -10,6 +10,9 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 permissions:
   contents: write
   pull-requests: write
+  issues: write
+  checks : write
+  statuses: write
 
 jobs:
   publish:
@@ -22,13 +25,13 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-
       - run: bun install --frozen-lockfile
 
       - name: Create Release or Publish
         uses: changesets/action@v1
         with:
           publish: bun run release 
+          create_release: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
