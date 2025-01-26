@@ -19,7 +19,6 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Get the code
       - uses: actions/checkout@v3
 
       - uses: oven-sh/setup-bun@v1
