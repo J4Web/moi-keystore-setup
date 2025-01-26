@@ -36,8 +36,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Publish to NPM
-        env: 
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
-        run:  echo "//registry.npmjs.org/:_authToken=\${NODE_AUTH_TOKEN}" > .npmrc && bun run publish
