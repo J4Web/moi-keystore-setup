@@ -10,7 +10,7 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "changeset version",
+    "release": "changeset version"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.12",
