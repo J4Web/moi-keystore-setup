@@ -4,7 +4,7 @@
   "type": "module",
   "version": "0.0.1",
   "bin": {
-    "moi-keystore-setup": "./dist/index.js"
+    "moi-keystore-setup": "./dist/bin.js"
   },
   "scripts": {
     "build": "bun build --minify --outfile=dist/bin.js src/index.ts",
